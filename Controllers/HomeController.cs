@@ -47,10 +47,10 @@ namespace Todo.Controllers
 
             context.Todos.Update(model);
             context.SaveChanges();
-            return todo;
+            return model;
         }
 
-        [HttpDelete]
+        [HttpDelete("/{id:int}")]
         public TodoModel Delete(
                 [FromRoute] int id,
                 [FromServices] AppDbContext context)
