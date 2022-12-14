@@ -34,7 +34,7 @@ namespace Todo.Controllers
         [HttpPut("/{id:int}")]
         public TodoModel Put(
                 [FromBody] TodoModel todo,
-                [FromBody] int id,
+                [FromRoute] int id,
                 [FromServices] AppDbContext context)
         {
             var model = context.Todos.FirstOrDefault(x => x.Id == id);
